@@ -4,21 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Binary</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <header class="header"> 
         <a href="#home" class="logo">Book Binary</a>
-  
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">Recommend</a>
-            <a href="#contact">Contact</a>
+            <a href="/" class="active">Home</a>
+            <a href="/recommend">Recommend</a>
         </nav>
-
     </header>
-   
+
+    <section class="home">
+        <div class="content">
+            <h2>Welcome to Book Binary - A Book Recommender System</h2>
+            <h3>Your Gateway to the World of Books</h3>
+            <h2>Top 50 Recommended Books</h2>
+        </div>
+
+        <div class="book-list">
+            {% for i in range(book_name|length) %}
+            <div class="book-card">
+                    <div class="book-details">
+                        <img src="{{ image[i] }}" alt="Book Image">
+                        <p>{{ book_name[i] }}</p>
+                        <h4>{{ author[i] }}</h4>
+                        <h4>Votes: {{ votes[i] }}</h4>
+                        <h4>Rating: {{ rating[i] }}</h4>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="copyrights">Copyright ©2025 All rights reserved  |  This website is made with ❤ by Avneesh</p>
+    </footer>
     
 </body>
 </html>
