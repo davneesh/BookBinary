@@ -12,7 +12,7 @@
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: #fff;
-    --main-color: rgb(0, 102, 255);
+    --main-color: rgb(28, 60, 219);
 }
 html{
     font-size: 60%;
@@ -31,7 +31,6 @@ body{
     width: 100%;
     padding: 4rem 12% 4rem;
     background: rgb(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,4 +61,65 @@ body{
 .navbar a.active{
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
+}
+.home {
+    margin-top: 10%;
+    background-color: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.recommend {
+    margin-top: 10%;
+    background-color: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.content {
+    text-align: center;
+}
+.content h2 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  
+}
+.content h3 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+   
+}
+.content h1 {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+   
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); 
+}
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color); 
+    width: 50px;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 0;
+    background-color: var(--bg-color);
+}
+.copyrights{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
 }
