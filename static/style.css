@@ -13,6 +13,8 @@
     --second-bg-color: #131313;
     --text-color: #fff;
     --main-color: rgb(28, 60, 219);
+    --card-bg-color: #1f1f1f;
+    --card-hover-color: #2f2f2f;
 }
 html{
     font-size: 60%;
@@ -29,12 +31,13 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgb(0, 0, 0, 0.3);
+    padding: 3rem 12% 3rem;
+    background: rgb(0, 0, 0, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    backdrop-filter: blur(10px);
 }
 .logo{
     font-size: 3rem;
@@ -87,18 +90,50 @@ body{
     margin-top: 1rem;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-  
 }
 .content h3 {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    font-size: 2rem;
-   
+    font-size: 2rem; 
 }
 .content h1 {
     font-size: 3rem;
-    margin-top: 1.5rem;
-   
+    margin-top: 1.5rem; 
+}
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+.book-card {
+    background: var(--card-bg-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.book-card:hover {
+    transform: scale(1.05);
+    background: var(--card-hover-color);
+}
+.book-details {
+    padding: 2rem;
+    text-align: center;
+}
+.book-details img {
+    width: 50%;
+    object-fit: cover;
+}
+.book-details h4 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+.book-details p {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 0.3rem 0;
 }
 ::-webkit-scrollbar {
     width: 15px;
