@@ -12,9 +12,48 @@
         <a href="#home" class="logo">Book Binary</a>
         <nav class="navbar">
             <a href="/">Home</a>
+            <a href="/index">Books</a>
             <a href="/recommend" class="active">Recommend</a>
         </nav>
     </header>
+
+    <section class="recommend">
+        <div class="content">
+            <h1>Welcome to Book Binary</h1>
+            <h2>Recommend Books</h2>
+        </div>
+        <div class="container">
+                <div class="form-box">
+                    <form action="/recommend_books" method="post">
+                        <input name="user_input" type="text" class="form-control" placeholder="Enter book title"><br>
+                        <input type="submit" class="btn btn-lg btn-warning">
+                    </form>
+                </div>
+        </div>
+    
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+    
+        {% if data %}
+
+        <div class="book-list">
+            {% for item in data %}
+                    <div class="book-card">
+                        <div class="book-details">
+                            <img src="{{ item[2] }}">
+                            <p >{{ item[0] }}</p>
+                            <h4>{{ item[1] }}</h4>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+      
+    </section>
+        <footer class="footer">
+        <p class="copyrights">Copyright ©2025 All rights reserved  |  This website is made with ❤ by Avneesh</p>
+    </footer>
 
 
 </body>
