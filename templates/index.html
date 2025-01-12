@@ -12,14 +12,13 @@
         <a href="#home" class="logo">Book Binary</a>
         <nav class="navbar">
             <a href="/" class="active">Home</a>
+            <a href="/index">Books</a>
             <a href="/recommend">Recommend</a>
         </nav>
     </header>
-
-    <section class="home">
+        <section class="home">
         <div class="content">
-            <h2>Welcome to Book Binary - A Book Recommender System</h2>
-            <h3>Your Gateway to the World of Books</h3>
+            <h1>Welcome to Book Binary</h1>
             <h2>Top 50 Recommended Books</h2>
         </div>
 
@@ -31,7 +30,7 @@
                         <p>{{ book_name[i] }}</p>
                         <h4>{{ author[i] }}</h4>
                         <h4>Votes: {{ votes[i] }}</h4>
-                        <h4>Rating: {{ rating[i] }}</h4>
+                        <h4>Rating: {{ rating[i] | round(1) }} ⭐</h4>
                     </div>
             </div>
             {% endfor %}
